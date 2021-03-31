@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Counter from '$components/Counter.svelte';
-	import * as test from "$utility/test";
+	import "$utility/test";
 </script>
 
 <main>
