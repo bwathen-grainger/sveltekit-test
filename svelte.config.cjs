@@ -1,6 +1,7 @@
 const sveltePreprocess = require('svelte-preprocess');
 const node = require('@sveltejs/adapter-node');
 const pkg = require('./package.json');
+const { resolve } = require("path");
 
 /** @type {import('@sveltejs/kit').Config} */
 module.exports = {
@@ -17,6 +18,12 @@ module.exports = {
 		target: '#svelte',
 
 		vite: {
+			resolve: {
+				alias: {
+					$components: resolve(__dirname, "./src/lib/components"),
+					$utility: resolve (__dirname, "./src/lib/utility"),
+				},
+			},
 			ssr: {
 				noExternal: Object.keys(pkg.dependencies || {}),
 			},

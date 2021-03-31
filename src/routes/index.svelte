@@ -1,5 +1,6 @@
 <script lang="ts">
-	import Counter from '$lib/Counter.svelte';
+	import Counter from '$components/Counter.svelte';
+	import * as test from "$utility/test";
 </script>
 
 <main>
